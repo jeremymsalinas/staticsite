@@ -140,7 +140,7 @@ def block_to_block_type(block):
             if all(p.startswith('>') for p in block.split('\n')):
                 return 'blockquote'
         case r'^```.*(?:\n^\t.*)*':
-            return 'code'
+            return 'pre'
         case _:
             return 'p'
 
@@ -161,7 +161,7 @@ def block_to_html_node(block_type,block):
         case 'p':
             new_block = map_html(get_html_nodes(block))
             return LeafNode(block_type, new_block)
-        case 'code':
+        case 'pre':
             new_block = '\n'.join(re.split(r'```',block))
             return LeafNode(block_type,map_html(get_html_nodes(new_block)))
         case 'blockquote':

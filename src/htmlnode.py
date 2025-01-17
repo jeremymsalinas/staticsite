@@ -36,6 +36,7 @@ class TagType(Enum):
     BLOCKQUOTE = "blockquote"
     HR = "hr"
     BR = "br"
+    PRE = "pre"
     
 
 class HTMLNode:
