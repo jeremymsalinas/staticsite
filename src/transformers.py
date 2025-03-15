@@ -100,7 +100,7 @@ def split_nodes_link(old_nodes):
 
 def text_to_textnodes(text):
     # This is **text** with an *italic* word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)
-    delimiters = {'**': TextType.BOLD, '*': TextType.ITALIC, '`': TextType.CODE}
+    delimiters = {'**': TextType.BOLD, '*': TextType.ITALIC, '`': TextType.CODE, '_': TextType.ITALIC}
     new_nodes = [TextNode(text, TextType.TEXT)]
     for delimiter, text_type in delimiters.items():
         new_nodes = split_nodes_delimiter(new_nodes, delimiter, text_type)
