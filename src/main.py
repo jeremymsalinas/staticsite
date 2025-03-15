@@ -24,7 +24,7 @@ def main():
     NewNode = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
     print(repr(NewNode))
     copy_contents('static', 'public')
-    generate_pages_recursive(dir_path_content, template_path, dir_path_public)
+    generate_pages_recursive(dir_path_content, template_path, dir_path_public, basepath)
 
 
 
